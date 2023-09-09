@@ -1,0 +1,882 @@
+/* styles.css */
+
+.Semibold {
+  font-weight: 400;
+}
+
+#modal {
+  color: #000000;
+}
+
+.Light {
+  font-weight: 200;
+}
+
+.Regular {
+  font-weight: 300;
+}
+
+.Main {
+  width: 100%;
+  height: 1800px;
+  position: absolute;
+  background: black;
+  border-radius: 2px;
+  overflow-x: auto;
+  border-left: 0.50px rgba(0, 0, 0, 0.10) solid;
+  border-top: 0.50px rgba(0, 0, 0, 0.10) solid;
+  border-right: 0.50px rgba(0, 0, 0, 0.10) solid;
+  border-bottom: 0.50px rgba(0, 0, 0, 0.10) solid;
+}
+
+.RainbowLogo {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.TwirlOnly2 {
+  width: 1135px;
+  height: 303px;
+  left: 41%;
+  top: 0px;
+  position: relative;
+  transform-origin: 0 0;
+}
+
+.Backlight {
+  width: 733.23px;
+  height: 743.11px;
+  left: 354.68px;
+  top: 111.62px;
+  position: absolute;
+  background: rgba(17, 138, 178, 0.40);
+  box-shadow: 500px 500px 500px;
+  border-radius: 9999px;
+  filter: blur(500px);
+}
+
+.ConnectButtonWrapper {
+  left: 87%;
+  top: 30px;
+  position: absolute;
+}
+
+.ConnectButton {
+  padding-left: 36px;
+  padding-right: 36px;
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: rgba(217, 217, 217, 0);
+  border-radius: 15px;
+  border-left: 0.5px #FAFAFA solid;
+  border-top: 0.50px #FAFAFA solid;
+  border-right: 0.50px #FAFAFA solid;
+  border-bottom: 0.50px #FAFAFA solid;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.ConnectButtonIn {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+
+.WindfallTopLogo {
+  width: 300px;
+  left: 10%;
+  top: 35.59px;
+  position: absolute;
+  color: white;
+  font-size: 37.30px;
+  font-family: Lato;
+  font-weight: 200;
+  letter-spacing: 6.71px;
+}
+
+.WindfallLogoPinwheel {
+  width: 20.59px;
+  height: 20.59px;
+  left: -202px;
+  top: -30px;
+  position: relative;
+}
+
+.Header {
+  width: 237px;
+  height: 65.59px;
+  position: relative;
+}
+
+.mainInterface {
+  padding: 50px 40px;
+  position: relative;
+  height: 32%;
+  width: 950px;
+  top: 180px;
+  left: 26%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: -152px 88px 159px rgba(17, 138, 178, 0.25);
+  border-radius: 10px;
+  border: 0.50px rgba(255, 255, 255, 0.30) solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: -0.2px;
+  gap: 58px;
+}
+
+.Timer {
+  text-align: right;
+  color: white;
+  font-size: 45px;
+  font-family: Lato;
+  font-weight: 400;
+  word-wrap: break-word;
+  position: relative;
+  right: 50px;
+  top: 10px;
+}
+
+.mainDisplayWrapper {
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 264px;
+  display: inline-flex;
+}
+
+.mainDisplay {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 38px;
+  display: inline-flex;
+}
+
+.TotalCantoStaked, .DailyWindfall, .WeeklyWindfall, .nextDrawTimerText {
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-family: Lato;
+  font-weight: 200;
+}
+
+.nextDrawTimerText {
+  font-size: 48px;
+  font-family: Lato;
+  font-weight: 400;
+  position: relative;
+  left: 45px;
+  top: 10px;
+}
+
+.TotalCantoStakedNumber {
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+
+.DailyWindfallNumber, .WeeklyWindfallNumber {
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+
+.WeeklyWindfallNumber span:first-child {
+  color: yellow;
+}
+
+.DailyWindfallNumber span:first-child, .WeeklyWindfallNumber span:first-child, .TotalCantoStakedNumber span:first-child {
+  color: #33DE2F;
+}
+
+.mainDisplayValues {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 38px;
+  display: inline-flex;
+}
+
+.DepositCantoWrapper {
+  align-self: stretch;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  background: rgba(217, 217, 217, 0);
+  border-left: 0.50px #FAFAFA solid;
+  border-top: 0.50px #FAFAFA solid;
+  border-right: 0.50px #FAFAFA solid;
+  border-bottom: 0.50px #FAFAFA solid;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+}
+
+.DepositCantoButton {
+  align-self: stretch;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  background: rgba(217, 217, 217, 0);
+  border-left: 0.50px #FAFAFA solid;
+  border-top: 0.50px #FAFAFA solid;
+  border-right: 0.50px #FAFAFA solid;
+  border-bottom: 0.50px #FAFAFA solid;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+}
+
+#stakeText {
+  text-align: center;
+  color: white;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  font-family: Lato;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.stakeButtonWithBorder {
+  border: 1px solid white;
+}
+
+.EllipseRed {
+  width: 78.80px;
+  height: 78.80px;
+  left: 17%;
+  top: 260px;
+  position: absolute;
+  background: #EF476F;
+  box-shadow: 6px -12px 26px rgba(0, 0, 0, 0.71) inset;
+  border-radius: 9999px;
+}
+
+.EllipseDarkBlue {
+  width: 24px;
+  height: 24px;
+  left: 10%;
+  top: 450px;
+  position: absolute;
+  transform: rotate(180deg);
+  transform-origin: 0 0;
+  background: #073B4C;
+  box-shadow: 6px -12px 26px rgba(0, 0, 0, 0.71) inset;
+  border-radius: 9999px;
+}
+
+.EllipseYellow {
+  width: 50.48px;
+  height: 50.48px;
+  left: 13%;
+  top: 580px;
+  position: absolute;
+  background: #FFD166;
+  box-shadow: 6px -12px 26px rgba(0, 0, 0, 0.71) inset;
+  border-radius: 9999px;
+}
+
+.EllipseGreen {
+  width: 94.50px;
+  height: 94.50px;
+  left: 1660px;
+  top: 350px;
+  position: absolute;
+  background: #06D6A0;
+  box-shadow: 6px -12px 26px rgba(0, 0, 0, 0.71) inset;
+  border-radius: 9999px;
+}
+
+.EllipseOrange {
+  width: 36px;
+  height: 36px;
+  left: 1550px;
+  top: 550px;
+  position: absolute;
+  background: #F78C6B;
+  box-shadow: 6px -12px 26px rgba(0, 0, 0, 0.71) inset;
+  border-radius: 9999px;
+}
+
+.EllipseBlue {
+  width: 22px;
+  height: 22px;
+  left: 1490px;
+  top: 220px;
+  position: absolute;
+  background: #118AB2;
+  box-shadow: 6px -12px 26px rgba(0, 0, 0, 0.71) inset;
+  border-radius: 9999px;
+}
+
+.userNFTs {
+  width: 1228px;
+  height: 383.58px;
+  left: 19%;
+  top: 740.34px;
+  position: absolute;
+}
+
+.userNFTHeader {
+  width: 1228px;
+  height: 40px;
+}
+
+.userNFTStakingAmount, .userNFTTimeRemaining, .userNFTUnstake, .userNFTPosition {
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-family: Lato;
+  font-weight: 200;
+  line-height: 37.88px;
+  word-wrap: break-word;
+}
+
+.userNFTStakingAmount {
+  width: 103.01px;
+  left: 449px;
+  top: 60px;
+}
+
+.userNFTUnstake {
+  width: 180px;
+  left: 710px;
+  top: 60px;
+}
+
+.userNFTTimeRemaining {
+  width: 188.56px;
+  left: 973px;
+  top: 60px;
+}
+
+.userNFTPosition {
+  width: 169px;
+  left: 160px;
+  top: 60px;
+}
+
+.UserNFTInformation {
+  width: 1228px;
+  height: 101px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  left: 0px;
+  top: 50.73px;
+  position: absolute;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 10px;
+  overflow: hidden;
+  border-left: 0.50px rgba(255, 255, 255, 0.30) solid;
+  border-top: 0.50px rgba(255, 255, 255, 0.30) solid;
+  border-right: 0.50px rgba(255, 255, 255, 0.30) solid;
+  border-bottom: 0.50px rgba(255, 255, 255, 0.30) solid;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 44px;
+  display: inline-flex;
+}
+
+.TwitterPfp3Transparent2 {
+  width: 91px;
+  height: 75px;
+}
+
+.textData {
+  justify-content: flex-start;
+  align-items: center;
+  gap: 97px;
+  display: flex;
+}
+
+.NFTNumber {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  display: inline-flex;
+}
+
+.statusLive {
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5.09px;
+  display: inline-flex;
+}
+
+.liveIcon {
+  width: 6.36px;
+  height: 6.36px;
+  background: #33DE2F;
+  border-radius: 9999px;
+}
+
+.Live {
+  color: white;
+  font-size: 15.28px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+
+.NFTID {
+  width: 169px;
+  color: white;
+  font-size: 30px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+
+.stakingAmount {
+  width: 180px;
+}
+
+.stakingAmount span:first-child {
+  color: white;
+  font-size: 24px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+
+.stakingAmount span:last-child {
+  color: #33DE2F;
+  font-size: 24px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+
+.unstakeElement {
+  color: #33DE2F;
+  font-size: 24px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+  border: none;
+  background: transparent;
+}
+
+.ClaimReward, .claimRewardsButton, .claimRewardsButtonInner, .claimRewardsAmount {
+  width: 250px;
+  color: white;
+  font-size: 24px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+  background: transparent;
+  border: none;
+}
+
+.stakeButton {
+  width: 100px;
+  color: white;
+  font-size: 24px;
+  font-family: Lato;
+  font-weight: 200;
+  background: transparent;
+  border: 1px solid white;
+}
+
+.claimRewardsButtonInner span:first-child {
+  color: white;
+  font-size: 36px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+
+.claimRewardsButtonInner span:last-child {
+  color: #33DE2F;
+  font-size: 36px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+
+.claimRewardsWrapper {
+  width: 750px;
+  height: 383.58px;
+  left: 27%;
+  top: 1080px;
+  position: absolute;
+}
+
+.claimRewardsButton {
+  font-size: 36px;
+}
+
+.claimRewardsButtonInner, .claimRewardsAmount {
+  font-size: 36px;
+}
+
+.flexBox {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 400px;
+  white-space: nowrap;
+}
+
+.BeginUnstaking {
+  width: 180px;
+  height: 50px;
+  color: white;
+  font-size: 24px;
+  font-family: Lato;
+  font-weight: 200;
+  line-height: 25.88px;
+  word-wrap: normal;
+  background: transparent;
+  border: none;
+}
+
+.timeRemaining {
+  width: 169px;
+  height: 50px;
+  color: #FF3E3E;
+  font-size: 24px;
+  font-family: Lato;
+  font-weight: 200;
+  line-height: 37.88px;
+  word-wrap: break-word;
+  background: transparent;
+  border: none;
+}
+
+.recentWindfalls {
+  width: 1228px;
+  height: 537.14px;
+  position: absolute;
+  left: 14%;
+  top: 800.42px;
+}
+
+.recentWindfallsRectangle {
+  width: 102%;
+  height: 700px;
+  position: absolute;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 10px;
+  border-left: 0.50px rgba(255, 255, 255, 0.30) solid;
+  border-top: 0.50px rgba(255, 255, 255, 0.30) solid;
+  border-right: 0.50px rgba(255, 255, 255, 0.30) solid;
+  border-bottom: 0.50px rgba(255, 255, 255, 0.30) solid;
+  left: 6%;
+  top: 0px;
+}
+
+.recentWindfallsGroup {
+  text-align: center;
+  color: white;
+  font-size: 45px;
+  font-family: Lato;
+  font-weight: 200;
+  letter-spacing: -0.1px;
+  word-wrap: break-word;
+}
+
+.recentWindfallsOutter {
+  width: 1134.99px;
+  height: 435px;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 51px;
+  display: inline-flex;
+  letter-spacing: -.1px;
+  left: 13%;
+  top: 25px;
+}
+
+.recentWindfallsTitle {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  display: flex;
+}
+
+.recentWindfallsTitleText {
+  position: relative;
+  top: 17px;
+}
+
+.recentWindfallsCategories {
+  align-self: stretch;
+  justify-content: space-between;
+  align-items: center;
+  gap: 125px;
+  display: inline-flex;
+}
+
+.lineSeperator {
+  width: 1070px;
+  height: 0px;
+  margin-bottom: 20px;
+  background: white;
+  border: 0.50px rgba(255, 255, 255, 0.20) solid;
+}
+
+.pastWinnersData {
+  align-self: stretch;
+  height: 412px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: normal;
+  gap: 33px;
+  display: flex;
+}
+
+.pastWeekData {
+  align-self: stretch;
+  justify-content: space-between;
+  align-items: center;
+  display: inline-flex;
+}
+
+.daily, .pastDate, .winnerAccount, .Canto {
+  width: 150px;
+  color: white;
+  font-size: 20px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.pastDate {
+  width: 200px;
+}
+
+.daily {
+  left: -20px;
+  text-align: center;
+}
+
+.winnerAccount {
+  left: 12px;
+}
+
+.Canto span:first-child {
+  color: #33DE2F;
+  font-size: 20px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+
+.Canto span:last-child {
+  color: white;
+  font-size: 20px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+
+.WindfallSection, .Date, .Address, .Amount {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  font-family: Lato;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.WindfallSection {
+  width: 150px;
+  left: 10px;
+}
+
+.Date {
+  width: 150px;
+  left: 68px;
+}
+
+.Address {
+  width: 210px;
+  left: 80px;
+}
+
+.Amount {
+  width: 130px;
+  left: 65px;
+}
+
+.Footer {
+  width: 1074px;
+  height: 130.1px;
+  position: absolute;
+  left: 20%;
+  top: 1550px;
+}
+
+.CopyrightWindfall2023 {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.40);
+  font-size: 16px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+  left: 0px;
+  top: 104.09px;
+}
+
+.tokenContract {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.40);
+  font-size: 18px;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+  left: 37%;
+  top: 1750px;
+}
+
+.footerButtonWrapper {
+  width: 755px;
+  height: 112px;
+  position: absolute;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 81px;
+  display: inline-flex;
+  left: 339px;
+  top: 19.09px;
+  text-decoration: none;
+}
+
+.footerSection {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: normal;
+  gap: 20px;
+  display: inline-flex;
+}
+
+.windfallBottomLogo {
+  width: 237px;
+  height: 65.59px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.TwitterPfp3TransparentBottom {
+  width: 20.59px;
+  height: 20.59px;
+  left: 38px;
+  top: 10px;
+  position: absolute;
+}
+
+.Disclaimer, .PrivacyPolicy, .TermsOfService, .Faq, .Docs, .ReportBug, .HowDoesItWork, .NeedHelp {
+  color: white;
+  background: transparent;
+  font-size: 20px;
+  border: none;
+  font-family: Lato;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+
+.Logos {
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 40px;
+  display: flex;
+}
+
+.LogoOfTwitter1, .GmailLogo256px1 {
+  height: 20px;
+}
+
+.LogoOfTwitter1 {
+  width: 24px;
+}
+
+.GmailLogo256px1 {
+  width: 26px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  animation-delay: -1.0s;
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+  }
+  50% {
+    transform: scale(1.0);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.footerSection {
+}
+
+.WindfallBottom {
+  position: absolute;
+  color: white;
+  font-size: 37.30px;
+  font-family: Lato;
+  font-weight: 200;
+  letter-spacing: 6.71px;
+  word-wrap: break-word;
+  left: 0px;
+  top: 20.59px;
+}
+
