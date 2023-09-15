@@ -53,12 +53,20 @@ interface IStaking {
 
 
   /// @notice Publish the winning address and distribute the winning amount.
+    /// @param winningToken Token to be attributed rewards
+    /// @param winningAmount Amount to be acredited to winningToken
+    /// @param randomNumber The random number that was used to pull rewards
+    function publishWinner(uint winningToken, uint winningAmount, uint randomNumber) external;
+
+    /// @notice Pick the winning address and the winning amount. 
+    /// @dev Computation requires too much gas as number of users increases
     /// @param salt A random value input at function call to add randomness to the generated number.
-    function publishWinner(uint salt) external payable;
+    function pickWinner(uint salt) external view returns (uint, uint, uint);
 
     /// @notice Get the amount to be distributed as the daily winning amount.
+    /// @param condition A boolean, true if super rewards, false if normal rewards
     /// @return The amount to be distributed as the winning amount.
-    function getWinningAmount() external view returns (uint);
+    function getWinningAmount(bool condition) external view returns (uint);
 
     /// @notice Get the user data for a specific token ID.
     /// @dev Retrieves the user struct for the given token ID.
@@ -68,5 +76,40 @@ interface IStaking {
 
     // @notice Function that returns true if the next publishWinningAddress is the super rewards
     function isSuper() external view returns (bool);
+
+
+        // Admin Functions:
+
+    /// @notice Function to set the payout percentage after deployment.
+    /// @param _payoutPercent The new payout percentage.
+    /// @dev Contract is non-upgradable so some changes can be made without needing new contract
+    function setPayoutPercent(uint32 _payoutPercent) external payable;
+
+
+    /// @notice Function to set the dayDenom and weekDenom values.
+    /// @param _dayDenom The new value for dayDenom.
+    /// @param _superMultiplier The new value for weekDenom.
+    /// @dev Contract is non-upgradable so some changes can be made without needing new contract
+    function setDenoms(uint32 _dayDenom, uint32 _superMultiplier) external payable;
+
+    /// @notice Function to set the super reward frequency after deployment.
+    /// @param _superRewardsFrequency The new super reward frequency.
+    /// @dev Contract is non-upgradable so some changes can be made without needing new contract
+    function setSuperRewardFrequency(uint32 _superRewardsFrequency) external payable;
+
+    /// @notice Withdraw tokens from contract, needed since automatic staking/unstaking to node not currently possible,
+    /// @dev This function allows users with admin or safety roles to withdraw tokens from the contract manually.
+    /// @param _amount The amount of tokens to withdraw.
+    function withdrawTokens(uint _amount) external payable;
+
+    /// @notice Deposit tokens into the contract.
+    /// @dev This function allows users to deposit tokens into the contract
+    /// @dev Intended use is for owner to deposit the unstaked funds into contract after 21 day wait period
+    function depositTokens() external payable;
+
+    /// @notice Function to calculate the amounts of staking/unstaking of the contract
+    /// @dev This function is for administration to determine how much to start unstaking etc
+    /// @return An uint array amounts[Eligible for rewards, Ineligible for rewards, winnerRewards total, Can unstake]
+    function calculateAmounts() external view returns (uint[] memory);
 
 }

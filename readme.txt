@@ -1,7 +1,11 @@
 This was originally coded to be used in bootstrap studio which required the use of pure javascript. This can be used as a reference for changing the code to another language. This was my first time creating a website and using javascript, so the code may be written poorly and not make sense. 
 
+Canto quickstart guide: https://docs.canto.io/evm-development/quickstart-guide
+
+
 CONTRACT ADDRESSES:
 Testnet:
+RPC: https://canto-testnet.plexnode.wtf
 Turnstile: 0xe371237E2d8Acf58356b8Da263ad952528CDfd8b
 Staking: 0x66c1222813C1BB089277f4496e4314a5E9709610
 Token: 0x11BB2C7fe36FA74e11EE9DeA936A2faF487694a7
