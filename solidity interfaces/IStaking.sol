@@ -16,8 +16,6 @@ interface IStaking {
     /// @return The token id.
     function stake() external payable returns (uint);
 
-    // Otherwise, store the unstake time, and set stakingStatus to false.
-    // This removes elegibility for calculateWinningNftId
     /// @notice Start unstaking a token.
     /// @dev Requires the sender to be the owner of the token and the unstake timestamp to be initialized.
     /// @param tokenId The token id.
@@ -29,7 +27,7 @@ interface IStaking {
     function unstake(uint tokenId) external;
 
     /// @notice Check the amount needed to start unstaking.
-    /// @notice Used in WindfallFactory.sol, realistically only useful for owner
+    /// @dev Used in WindfallFactory.sol, realistically only useful for owner
     /// @param timestamp Only tokens with unstakeTimestamp greater than timestamp will be counted.
     /// @return The total amount and the current timestamp.
     function recentUnstaking(uint timestamp) external view returns (uint, uint);
@@ -42,8 +40,7 @@ interface IStaking {
     /// @param tokenId The token to check the rewards of.
     function checkRewards(uint tokenId) external view returns(uint);
 
-
-    /// @dev Retrieves the metadata for a specific tokenId.
+    /// @notice Retrieves the metadata for a specific tokenId.
     /// @param tokenId The ID of the token.
     /// @return The metadata associated with the given tokenId.
     function getMetadata(uint tokenId) external view returns (string memory);
@@ -51,8 +48,7 @@ interface IStaking {
     /// @return The balance of the contract.
     function getContractBalance() external view returns (uint);
 
-
-  /// @notice Publish the winning address and distribute the winning amount.
+    /// @notice Publish the winning address and distribute the winning amount.
     /// @param winningToken Token to be attributed rewards
     /// @param winningAmount Amount to be acredited to winningToken
     /// @param randomNumber The random number that was used to pull rewards
@@ -74,8 +70,14 @@ interface IStaking {
     /// @return The user struct containing staking amount, staking status, stake timestamp, and unstake timestamp.
     function getUserByNftId(uint _index) external view returns (User memory);
 
-    // @notice Function that returns true if the next publishWinningAddress is the super rewards
+    /// @notice Function that returns true if the next publishWinningAddress is the super rewards
+    /// @return True if super rewards, false otherwise. 
     function isSuper() external view returns (bool);
+
+    /// @notice Function to return data stored in winningAmounts and winningTokens
+    /// @return The array winningAmounts
+    /// @return The array winningTokens
+    function getPastDataArrays() external view returns (uint[7] memory, uint[7] memory);
 
 
         // Admin Functions:
@@ -111,5 +113,10 @@ interface IStaking {
     /// @dev This function is for administration to determine how much to start unstaking etc
     /// @return An uint array amounts[Eligible for rewards, Ineligible for rewards, winnerRewards total, Can unstake]
     function calculateAmounts() external view returns (uint[] memory);
+
+    /// @notice A function to snapshot eligible NFTs
+    /// @dev Used to help make the off chain calculation more transparent 
+    /// @return A uint array of valid NFTs and their amounts
+    function snapshot() external view returns (uint[] memory);
 
 }

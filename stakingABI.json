@@ -315,6 +315,24 @@
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "getPastDataArrays",
+		"outputs": [
+			{
+				"internalType": "uint256[7]",
+				"name": "",
+				"type": "uint256[7]"
+			},
+			{
+				"internalType": "uint256[7]",
+				"name": "",
+				"type": "uint256[7]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "bytes32",
@@ -695,6 +713,19 @@
 	},
 	{
 		"inputs": [],
+		"name": "snapshot",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "stake",
 		"outputs": [
 			{
@@ -846,44 +877,6 @@
 			}
 		],
 		"name": "winnerRewards",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "winningAmounts",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "winningToken",
 		"outputs": [
 			{
 				"internalType": "uint256",

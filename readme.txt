@@ -30,7 +30,10 @@ Extra:
 - The python files provided are mainly just for reference, could be helpful, may not. stakingContractEventListener.py is a script that updates the metadata periodically, and the factoryContractInfo.py would be used to automate calling the publishWinner function. 
 - The RPC url for the mainnet and testnet are different, just keep that in mind. The contract addresses in the code will also point to a different contract, refer to the addresses provided. 
 - The staking and token contract interfaces are provided which expose, I believe, all the external/public functions from the contracts. 
+- The data from the past winners can be accessed through a call to getPastDataArrays
 - I am not too familiar with front end languages, and I am likely the one who will have to make small edits in the future, so I would appreciate approprate comments for the code. 
+
+
 
 If you have any questions feel free to ask, I will try to be available as much as possible, but I do live in PST time so depending on the timezone difference, there may be better windows of time to get responses.
 
