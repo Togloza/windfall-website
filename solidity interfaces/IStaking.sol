@@ -62,7 +62,7 @@ interface IStaking {
     /// @notice Get the amount to be distributed as the daily winning amount.
     /// @param condition A boolean, true if super rewards, false if normal rewards
     /// @return The amount to be distributed as the winning amount.
-    function getWinningAmount(bool condition) external view returns (uint);
+    function getWinningAmount(bool condition) external view returns (uint, uint);
 
     /// @notice Get the user data for a specific token ID.
     /// @dev Retrieves the user struct for the given token ID.
