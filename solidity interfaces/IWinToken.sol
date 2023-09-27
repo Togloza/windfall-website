@@ -46,7 +46,11 @@ interface IWinToken {
      */
     function burn(uint256 tokenId) external;
 
+    // See {ERC721-safeTransferFrom}.
     function safeTransferFrom(address from, address to, uint256 tokenId, bytes calldata data) external;
-
-     function getTokensOfOwner(address owner) external view returns (uint[] memory);
+   
+    /// @notice Function to find which tokens an address owns.
+    /// @dev Only needed for deployment on chains that don't support retrieving token ownership easily. 
+    /// @dev Gas intensive, should not be used in write functions
+    function getTokensOfOwner(address owner) external view returns (uint[] memory);
 }

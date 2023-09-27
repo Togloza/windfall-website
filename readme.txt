@@ -7,9 +7,16 @@ CONTRACT ADDRESSES:
 Testnet:
 RPC: https://canto-testnet.plexnode.wtf
 Turnstile: 0xe371237E2d8Acf58356b8Da263ad952528CDfd8b
-Staking: 0x66c1222813C1BB089277f4496e4314a5E9709610
-Token: 0x11BB2C7fe36FA74e11EE9DeA936A2faF487694a7
+Staking: 0x66c1222813C1BB089277f4496e4314a5E9709610 (DEPRECIATED)
+Token: 0x11BB2C7fe36FA74e11EE9DeA936A2faF487694a7 (DEPRECIATED)
 
+
+Staking Updated: 0xC06940e81e6337344E16d67DDb33dD6144eBe2CE
+Token Updated: 0xA631523aC0Aa65dDB8E3a13eBc5B00A66C0CC8d7
+
+Note: The staking contract has a buffer period of 2 minutes for staking to be valid,
+and a 24 minute period before you can unstake after starting to unstake. In the actual
+contract these will be 2 days and 24 days respectively. 
 
 Extra:
 - There is commented code at the bottom which was my attempt to upload the token metadata to my google cloud bucket where it will be hosted. I couldn't get it to work since it needs the Storage object imported from the google-cloud/storage, but this file wouldn't let me use require statements since its not a module or something (forgot the exact name), and I couldn't figure out how to make it one. It would be great if the metadata could be updated and uploaded to the google cloud bucket when the user calls the stake(), startUnstaking(), and unstake() functions. I do have a work around solution by using a python script (included) to update the metadata periodically, but if it can be done on the front end that would be great. 
