@@ -47,11 +47,6 @@
 		"type": "error"
 	},
 	{
-		"inputs": [],
-		"name": "InsufficentQuota",
-		"type": "error"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -478,6 +473,19 @@
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "getFrontendData",
+		"outputs": [
+			{
+				"internalType": "bytes",
+				"name": "",
+				"type": "bytes"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -491,24 +499,6 @@
 				"internalType": "string",
 				"name": "",
 				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getPastDataArrays",
-		"outputs": [
-			{
-				"internalType": "uint256[7]",
-				"name": "",
-				"type": "uint256[7]"
-			},
-			{
-				"internalType": "uint256[7]",
-				"name": "",
-				"type": "uint256[7]"
 			}
 		],
 		"stateMutability": "view",
@@ -654,19 +644,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "newQuota",
-				"type": "uint256"
-			}
-		],
-		"name": "increasePublisherQuota",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
 		"inputs": [],
 		"name": "isSuper",
 		"outputs": [
@@ -674,6 +651,19 @@
 				"internalType": "bool",
 				"name": "",
 				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "lastPublished",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -774,19 +764,6 @@
 		"name": "publishWinner",
 		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "publisherQuota",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{

@@ -22,23 +22,20 @@ export default function useStakeData() {
       console.log(error, "error");
     }
 
-    console.log("1234123");
     try {
-      const drawCounter = await contract?.drawCounter();
-      const pastData = await contract?.getPastDataArrays();
-      const winningAmount = await contract?.getWinningAmount(true);
-      const isSuper = await contract?.isSuper(); 
-      console.log(drawCounter, pastData, winningAmount, "drawCounter, pastData, winningAmount");
-      const recentWindfall = getRecentWindfallData({ drawCounter, pastData });
-      const tokenTableData = getTokenTableData({ winningAmount, isSuper });
-      return { contract, drawCounter, pastData, winningAmount, isSuper, recentWindfall, tokenTableData };
+      const frontData = await contract?.getFrontendData();
+      const [isSuper, superMultiplier, dayAmount, weekAmount, totalStaked, winningAmounts, winningTokens] = ethers.utils.defaultAbiCoder.decode([ "bool", "uint32", "uint256", "uint256", "uint256", "uint256[7] memory", "uint256[7] memory" ], frontData);
+
+      const recentWindfall = getRecentWindfallData({ isSuper, winningAmounts, winningTokens });
+      const tokenTableData = getTokenTableData({ dayAmount, weekAmount, totalStaked });
+      return { contract, isSuper, superMultiplier, dayAmount, weekAmount, totalStaked, winningAmounts, winningTokens, recentWindfall, tokenTableData};
     } catch (e) {
       console.log(e, "eee");
       return {};
     }
   };
 
-  const getRecentWindfallData = ({ drawCounter, pastData }: any) => {
+  const getRecentWindfallData = ({ isSuper, winningAmounts, winningTokens }: any) => {
     const recentWindfall = [];
     for (let i = 0; i < 7; i++) {
       let currentDate = new Date();
@@ -56,10 +53,10 @@ export default function useStakeData() {
         year: "numeric",
       });
       let item = {
-        title: (drawCounter + i - 1) % 7 === 0 ? "WEEKLY" : "DAILY",
+        title: isSuper ? "WEEKLY" : "DAILY",
         date: formattedDate,
-        nft: "C-" + pastData[1]?.[i].toString(),
-        amount: pastData[0]?.[i] ? parseFloat(utils?.formatEther(pastData[0]?.[i])).toPrecision(3) + " CANTO": 0,
+        nft: "C-" + winningTokens?.[i].toString(),
+        amount: winningAmounts?.[i] ? parseFloat(utils?.formatEther(winningAmounts?.[i])).toPrecision(3) + " CANTO": 0,
       };
       recentWindfall.push(item);
     }
@@ -67,15 +64,15 @@ export default function useStakeData() {
     return recentWindfall;
   };
 
-  const getTokenTableData = ({ winningAmount, isSuper }: any) => {
+  const getTokenTableData = ({ dayAmount, weekAmount, totalStaked }: any) => {
     const networkList = ["CANTO", "Ethereum", "Matic"];
     const list = networkList.map((item) => {
       return item === "CANTO"
         ? {
             token: item,
-            deposit: winningAmount[1] ? parseFloat(utils.formatEther(winningAmount[1])).toPrecision(4) : 0,
-            daily: isSuper ? (parseFloat(utils.formatEther(winningAmount[0])) * 0.125).toPrecision(4) : parseFloat(utils.formatEther(winningAmount[0])).toPrecision(4),
-            super: isSuper ? parseFloat(utils.formatEther(winningAmount[0])).toPrecision(4) : (parseFloat(utils.formatEther(winningAmount[0])) * 8).toPrecision(4),
+            deposit: parseFloat(utils.formatEther(totalStaked)).toPrecision(4),
+            daily: parseFloat(utils.formatEther(dayAmount)).toPrecision(4),
+            super: parseFloat(utils.formatEther(weekAmount)).toPrecision(4)
           }
         : {
             token: item,
