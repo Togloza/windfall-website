@@ -10,6 +10,14 @@ interface IStaking {
         bool eligibleForRewards;
     }
 
+        // State variables
+    function payoutPercent() external view returns(uint32);
+    function dayDenom() external view returns(uint32);
+    function superMultiplier() external view returns(uint32);
+    function superRewardsFrequency() external view returns(uint32);
+    function drawCounter() external view returns(uint);
+    function numberOfUsers() external view returns(uint);
+    function publisherQuota() external view returns(uint);
 
     /// @notice Stake function, creates new user, set tokenURI and metadata, and mint Nft to sender.
     /// @dev Requires the sent value to be greater than 0.
@@ -62,6 +70,7 @@ interface IStaking {
     /// @notice Get the amount to be distributed as the daily winning amount.
     /// @param condition A boolean, true if super rewards, false if normal rewards
     /// @return The amount to be distributed as the winning amount.
+    /// @return The valid staking amount for the condition value
     function getWinningAmount(bool condition) external view returns (uint, uint);
 
     /// @notice Get the user data for a specific token ID.
@@ -74,11 +83,10 @@ interface IStaking {
     /// @return True if super rewards, false otherwise. 
     function isSuper() external view returns (bool);
 
-    /// @notice Function to return data stored in winningAmounts and winningTokens
-    /// @return The array winningAmounts
-    /// @return The array winningTokens
-    function getPastDataArrays() external view returns (uint[7] memory, uint[7] memory);
-
+    /// @notice Function to return data needed for the front end
+    /// @return frontendData An encoded bytes variable for variables (bool, uint32, uint, uint, uint, uint[7] memory, uint[7] memory)
+    /// Vars: (superRewards, superMultiplier, dayAmount, weekAmount, totalStaked, winningAmounts, winningTokens)
+    function getFrontendData() external view returns (bytes memory);
 
         // Admin Functions:
 
