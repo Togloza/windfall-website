@@ -23,6 +23,8 @@ export default function useStakeData() {
     }
 
     try {
+      // As implemented, it seems to be pulling this data after connecting to a wallet. This function call does not need a signer to be invoked
+      // Ideally this information is queried with or without a wallet connected. 
       const frontData = await contract?.getFrontendData();
       const [isSuper, superMultiplier, dayAmount, weekAmount, totalStaked, winningAmounts, winningTokens] = ethers.utils.defaultAbiCoder.decode([ "bool", "uint32", "uint256", "uint256", "uint256", "uint256[7] memory", "uint256[7] memory" ], frontData);
 
